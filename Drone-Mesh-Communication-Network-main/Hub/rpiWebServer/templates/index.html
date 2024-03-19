@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire Prediction Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        #predictButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        #predictionResults {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Forest Fire Prediction System</h1>
+    <button id="predictButton" onclick="predictFire()">Predict Fire</button>
+    <div id="predictionResults"></div>
+
+    <script>
+        function predictFire(){
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 && xhr.status ==200){
+            document.getElementById("predictionResults").innerHTML=xhr.responseText;
+        }
+        };
+        xhr.open("GET","/predict_csv",true);
+        xhr.send();
+        }
+        setInterval(fetchPrediction,5000);
+    </script>
+</body>
+</html>

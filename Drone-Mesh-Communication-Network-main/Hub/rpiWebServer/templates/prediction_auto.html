@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px auto;
+        }
+        a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Forest Fire Prediction Result</h1>
+    {% for prediction in predictions %}
+    <p>Prediction: {% if predictions == 1 %}Fire{% else %}No Fire{% endif %}</p>
+    {% endfor %}
+    <a href="/">Go back</a>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+>>> %Run 'drone to hub.py'
+XBee Hub Operational
+Traceback (most recent call last):
+  File "/home/drone1/Desktop/drone to hub.py", line 28, in <module>
+    sensor_data = read_serial_data()
+  File "/home/drone1/Desktop/drone to hub.py", line 11, in read_serial_data
+    data = ser.readline().decode('utf-8').rstrip()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 1: invalid start byte
