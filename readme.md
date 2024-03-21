@@ -1,4 +1,4 @@
-# Team 1: Drone Mesh Communication Network
+# Drone Mesh Communication Network
 
 ## Problem Statement
 
